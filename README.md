@@ -2,7 +2,7 @@
 
 ## Overview
 
-**TacDiffusion** is a project for training, validating, and deploying diffusion models. The repository includes various scripts and resources to facilitate the development and evaluation of these models. The `models.py` file located in the `helper_functions` directory is adapted from the GitHub repository maintained by Microsoft: [Imitating-Human-Behaviour-w-Diffusion](https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion). 
+**TacDiffusion** is a project for training, validating, and deploying diffusion models. The repository includes various scripts and resources to facilitate the development and evaluation of these models. The `models.py` file is located in the `helper_functions` directory.
 
 ### Directory Structure
 
