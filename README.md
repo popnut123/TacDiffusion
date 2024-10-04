@@ -8,34 +8,35 @@
 
 This repository is the official implementation of the paper [TacDiffusion: Force-domain Diffusion Policy for Precise Tactile Manipulation](https://arxiv.org/abs/2409.11047) by Wu et al. (full citation below). 
 
-In this work, we present a novel framework leveraging diffusion models to generate 6D wrench for tactile manipulation in high-precision robotic assembly tasks. Our approach, being the first force-domain diffusion policy, demonstrated excellent improved zero-shot transferability compared to prior work, by achieving an overall 95.7% success rate in zero-shot transfer in experimental evaluations. Additionally, we investigate the trade-off between accuracy and inference speed and provide a practical guideline for optimal model selection. Further, we address the frequency misalignment between the diffusion policy and the real-time control loop with a dynamic system-based filter, significantly improving the task success rate by 9.15%. Extensive experimental studies in our work underscore the effectiveness of our framework in real-world settings, showcasing a promising approach tackling high-precision tactile manipulation by learning diffusion-based transferable skills from expert policies containing primitive-switching logic. 
+In this work, we present a novel framework leveraging diffusion models to generate 6D wrench for tactile manipulation in high-precision robotic assembly tasks. Our approach, being the first force-domain diffusion policy, demonstrated excellent improved zero-shot transferability compared to prior work, by achieving an overall **95.7%** success rate in zero-shot transfer in experimental evaluations. Additionally, we investigate the trade-off between accuracy and inference speed and provide a practical guideline for optimal model selection. Further, we address the frequency misalignment between the diffusion policy and the real-time control loop with a dynamic system-based filter, significantly improving the task success rate by **9.15%**. Extensive experimental studies in our work underscore the effectiveness of our framework in real-world settings, showcasing a promising approach tackling high-precision tactile manipulation by learning diffusion-based transferable skills from expert policies containing primitive-switching logic. 
 
 ## Installation
 
-The code was tested on Pop!_OS 22.04 LTS, with [Anaconda](https://www.anaconda.com/download) Python 3.9 and [PyTorch]((http://pytorch.org/)) 2.3.1. Higher versions should be possible with some accuracy difference. NVIDIA GPUs are needed for both training and testing.
+The code was tested on Pop!_OS 22.04 LTS, which is equivalent to Ubuntu 22.04 LTS, with [Anaconda](https://www.anaconda.com/download) Python 3.9 and [PyTorch]((http://pytorch.org/)) 2.3.1. Higher versions should be possible with some accuracy difference. NVIDIA GPUs are needed for both training and testing.
 
 ---
 
 1. Clone this repo:
 
-    ~~~bash
+    ```bash
     TacDiffusion_ROOT=/path/to/clone/TacDiffusion
     git clone https://github.com/popnut123/TacDiffusion.git $TacDiffusion_ROOT
-    ~~~
+    ```
 
 2. Create an Anaconda environment or create your own virtual environment
-    ~~~bash
+
+    ```bash
     conda create -n TacDiffusion python=3.9
     conda activate TacDiffusion
     pip install -r requirements.txt
     conda install -c conda-forge eigenpy
-    ~~~
+    ```
 
 3. Prepare training/testing data
 
-    All training and testing data are stored under `$TacDiffusion_ROOT/dataset/`.
+    All training and testing data should be stored under `$TacDiffusion_ROOT/dataset/`.
 
-    You can download the prepared datasets using the following link: [Access the dataset here](https://drive.google.com/drive/folders/10Ix8utcx51R8NejvGRF-ujWEGy5MK05R?usp=sharing)
+    You can download the prepared datasets using the following link: [TacDiffusion Dataset](https://drive.google.com/drive/folders/10Ix8utcx51R8NejvGRF-ujWEGy5MK05R?usp=sharing)
 
 ## Training
 
@@ -100,7 +101,6 @@ cd $TacDiffusion_ROOT
 python 4_model_remote_control.py
 ```
 
-
 ## Citation
 Please cite the following if you use this repository in your publications:
 
@@ -116,4 +116,4 @@ Please cite the following if you use this repository in your publications:
 # License
 
 # Contact
-For questions, please contact [Yansong Wu](yansong.wu@tum.de).
+For questions, please contact [Yansong Wu](mailto:yansong.wu@tum.de).
