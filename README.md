@@ -107,10 +107,16 @@ docker compose up
 **step 5**: using the query assistant of MongoDB with the command
 ```bash
 db.getCollection("parameters").find({"name": "system"})
-````
+```
 **step 6**: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
 **step 7**: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
-**step 8**: restart the docker (detailed in step 3)
+**step 8**: restart the docker (detailed in step 3)\
+**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses
+```bash
+ipython3 -i 5_manipualtor_remote_control.py
+call_method()
+```
+
 
 ## Citation
 Please cite the following if you use this repository in your publications:
