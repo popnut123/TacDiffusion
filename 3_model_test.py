@@ -12,7 +12,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 # Set paths and directories
 DATASET_PATH = "dataset"
-SAVE_FIGURE_DIR = "figures/model_512"
+SAVE_FIGURE_DIR = "figures/TacDiffusion_model_512"
 FIGURE_ACTION_DIR = os.path.join(SAVE_FIGURE_DIR, "figures_action")
 FIGURE_state_DIR = os.path.join(SAVE_FIGURE_DIR, "figures_state")
 FIGURE_ERROR_DIR = os.path.join(SAVE_FIGURE_DIR, "figures_error")
@@ -29,7 +29,7 @@ print(f'state_dataset: {state_dataset}')
 print(f'action_dataset: {action_dataset}')
 
 # Model file
-model_name = 'output/model_512.onnx'
+model_name = 'output/TacDiffusion_model_512.onnx'
 print(f'model_name: {model_name}')
 
 # Load datasets

@@ -29,7 +29,7 @@ drop_prob = 0.0
 train_prop = 0.80
 use_prev = True
 
-Model_save_name = "model_512.pth"
+Model_save_name = "TacDiffusion_model_512.pth"
 state_dataset = 'robot_state_train.pkl'
 action_dataset = 'robot_action_train.pkl'
 

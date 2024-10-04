@@ -115,13 +115,13 @@ model_train_timeslot = 7
 print(f'!!! Model: {model_size} - {model_train_timeslot}')
 
 if model_size == 128 and model_train_timeslot == 7:
-    model_name = 'output/model_128.onnx'
+    model_name = 'output/TacDiffusion_model_128.onnx'
 elif model_size == 256 and model_train_timeslot == 7:
-    model_name = 'output/model_256.onnx'
+    model_name = 'output/TacDiffusion_model_256.onnx'
 elif model_size == 512 and model_train_timeslot == 7:
-    model_name = 'output/model_512.onnx'
+    model_name = 'output/TacDiffusion_model_512.onnx'
 elif model_size == 1024 and model_train_timeslot == 7:
-    model_name = 'output/model_1024.onnx'
+    model_name = 'output/TacDiffusion_model_1024.onnx'
 else:
     raise ValueError('No suitable model found!')
 print(f'Model name: {model_name}')

@@ -30,7 +30,7 @@ model = Model_Cond_Diffusion(
     guide_w=0.0,
 ).to(device)
 
-ModelName = "model_512"
+ModelName = "TacDiffusion_model_512"
 
 # Load the trained model parameters
 model.load_state_dict(torch.load(f"output/{ModelName}.pth"))
