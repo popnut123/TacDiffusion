@@ -111,7 +111,7 @@ db.getCollection("parameters").find({"name": "system"})
 **step 6**: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
 **step 7**: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
 **step 8**: restart the docker (detailed in step 3)\
-**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses
+**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses (Note that: The 5_manipualtor_remote_control.py and the dependent bbo folded and mios folder should be placed in the real-time PC.)
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
 call_method("localhost", 12000, "home_gripper") #
