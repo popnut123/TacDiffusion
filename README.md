@@ -36,50 +36,44 @@ The code was tested on Pop!_OS 22.04 LTS, which is equivalent to Ubuntu 22.04 LT
 
     All training and testing data should be stored under `$TacDiffusion_ROOT/dataset/`.
 
-    You can download the prepared datasets using the following link: [TacDiffusion Dataset](https://drive.google.com/drive/folders/10Ix8utcx51R8NejvGRF-ujWEGy5MK05R?usp=sharing)
+    You can download the prepared datasets using the following link: [TacDiffusion Dataset](https://drive.google.com/drive/folders/10Ix8utcx51R8NejvGRF-ujWEGy5MK05R?usp=sharing).
 
 ## Training
 
-To start a new training job with the default parameter settings, simply run the following:
+1. To start a new training job with the default parameter settings, simply run the following:
 
-```bash
-cd $TacDiffusion_ROOT
-python 1_model_train.py
-```
+    ```bash
+    cd $TacDiffusion_ROOT
+    python 1_model_train.py
+    ```
 
-The result will be saved in `$TacDiffusion_ROOT/output/`, e.g., `TacDiffusion_model_512.pth`.
+    The result will be saved in `$TacDiffusion_ROOT/output/`, e.g., `TacDiffusion_model_512.pth`.
 
-You could then use tensorboard to visualize the training process via
+    You could then use tensorboard to visualize the training process via
 
-```bash
-cd $TacDiffusion_ROOT
-tensorboard --logdir=logs --host=XX.XX.XX.XX
-```
+    ```bash
+    cd $TacDiffusion_ROOT
+    tensorboard --logdir=logs --host=XX.XX.XX.XX
+    ```
+
+2. To optimize the inference speed, we recommend exporting models to the *ONNX* format. Simply modify the model name in the script `$TacDiffusion_ROOT/2_model_trans_pth_to_onnx.py` and run the following command:
+
+    ```bash
+    cd $TacDiffusion_ROOT
+    python 2_model_trans_pth_to_onnx.py
+    ```
+
+    The converted model would be stored in `$TacDiffusion_ROOT/output/`, e.g., `TacDiffusion_model_512.onnx`.
 
 ---
 ***NOTE***
+- The four trained models, each with different neuron configurations as discussed in our paper, are already provided in the folder `$TacDiffusion_ROOT/output/`.
 
-The implemented Diffusion Model (DDPM) in `$TacDiffusion_ROOT/helper_functions/models.py` is adapted from [Imitating-Human-Behaviour-w-Diffusion](https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion).
+- The implemented Diffusion Model (DDPM) in `$TacDiffusion_ROOT/helper_functions/models.py` is adapted from [Imitating-Human-Behaviour-w-Diffusion](https://github.com/microsoft/Imitating-Human-Behaviour-w-Diffusion).
 
-The network architecture of the noise estimator is contructed as:
+- The network architecture of the noise estimator is contructed as:
 
 ![](readme/TacDiffusion_noise_estimator.png)
-
----
-
-To optimize the inference speed, we recommend exporting models to the *ONNX* format. Simply modify the model name in the script `$TacDiffusion_ROOT/2_model_trans_pth_to_onnx.py` and run the following command:
-
-```bash
-cd $TacDiffusion_ROOT
-python 2_model_trans_pth_to_onnx.py
-```
-
-The converted model would be stored in `$TacDiffusion_ROOT/output/`, e.g., `TacDiffusion_model_512.onnx`.
-
----
-***NOTE***
-
-The four trained models, each with different neuron configurations as discussed in our paper, are already provided in the folder `$TacDiffusion_ROOT/output/`.
 
 ## Testing
 
@@ -90,7 +84,7 @@ cd $TacDiffusion_ROOT
 python 3_model_test.py
 ```
 
-The testing results would be ploted in `$TacDiffusion_ROOT/figures/`
+The testing results would be ploted in `$TacDiffusion_ROOT/figures/`.
 
 ## Deploying
 
