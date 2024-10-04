@@ -114,7 +114,12 @@ db.getCollection("parameters").find({"name": "system"})
 **step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
-call_method()
+call_method("localhost", 12000, "home_gripper") #
+grasp(0.01)
+move_gripper(0.05)
+teach_location("localhost","peg_IL_test_app")
+teach_location("localhost","peg_IL_test_hole")
+
 ```
 
 
