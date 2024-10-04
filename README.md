@@ -116,4 +116,4 @@ Please cite the following if you use this repository in your publications:
 # License
 
 # Contact
-For questions, please contact [Yansong Wu](https://www.linkedin.com/in/yansong-wu-878341230/).
+For questions, please contact [Yansong Wu](yansong.wu@tum.de).
