@@ -125,6 +125,6 @@ Please cite the following if you use this repository in your publications:
 ```
 
 # License
-
+No commercial use!
 # Contact
 For questions, please contact [Yansong Wu](mailto:yansong.wu@tum.de).
