@@ -110,7 +110,7 @@ db.getCollection("parameters").find({"name": "system"})
 ````
 step 6: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
 step 7: boot your robot and lock the joint and release control in the robot desk\
-step 8: restart the docker (detailed in step 3)\
+step 8: restart the docker (detailed in step 3)
 
 ## Citation
 Please cite the following if you use this repository in your publications:
