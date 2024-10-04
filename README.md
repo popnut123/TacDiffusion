@@ -109,7 +109,7 @@ step 5: using the query assistant of MongoDB with the command
 db.getCollection("parameters").find({"name": "system"})
 ````
 step 6: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
-step 7: boot your robot and lock the joint and release control in the robot desk\
+step 7: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
 step 8: restart the docker (detailed in step 3)
 
 ## Citation
