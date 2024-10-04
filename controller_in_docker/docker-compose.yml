@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  mios:
+    image: "popnut/tac_diffusion:latest"
+    restart: always
+    environment:
+      - verbosity=info
+      - database_port=27017
+      - robot_config=0
+      - robot_arm=left
+    network_mode: "host"
+    cap_add:
+      - SYS_NICE
+    depends_on:
+      - "mongo"
+
+  mongo:
+    image: "mongo:4.4.6"
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./localFolder:/data/db
+
