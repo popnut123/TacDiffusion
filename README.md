@@ -96,21 +96,32 @@ cd $TacDiffusion_ROOT
 python 4_model_remote_control.py
 ```
 ### real-time kernal PC side
-step 1: install the real-timer kernal \
-step 2: install the docker [https://docs.docker.com/engine/install/ubuntu/](tutorial)\
-step 3: start the docker 
+**step 1**: install the real-timer kernal \
+**step 2**: install the docker [https://docs.docker.com/engine/install/ubuntu/](tutorial)\
+**step 3**: start the docker 
 ```bash
 cd $TacDiffusion_ROOT/controller_in_docker
 docker compose up
 ```
-step 4: install the MongoDB service & connect to the local MongoDB database with the address "localhost:27017"\
-step 5: using the query assistant of MongoDB with the command
+**step 4**: install the MongoDB service & connect to the local MongoDB database with the address "localhost:27017"\
+**step 5**: using the query assistant of MongoDB with the command
 ```bash
 db.getCollection("parameters").find({"name": "system"})
-````
-step 6: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
-step 7: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
-step 8: restart the docker (detailed in step 3)
+```
+**step 6**: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
+**step 7**: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
+**step 8**: restart the docker (detailed in step 3)\
+**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses
+```bash
+ipython3 -i 5_manipualtor_remote_control.py
+call_method("localhost", 12000, "home_gripper") #
+grasp(0.01)
+move_gripper(0.05)
+teach_location("localhost","peg_IL_test_app")
+teach_location("localhost","peg_IL_test_hole")
+
+```
+
 
 ## Citation
 Please cite the following if you use this repository in your publications:
@@ -125,6 +136,6 @@ Please cite the following if you use this repository in your publications:
 ```
 
 # License
-
+No commercial use!
 # Contact
 For questions, please contact [Yansong Wu](mailto:yansong.wu@tum.de).
