@@ -111,22 +111,22 @@ db.getCollection("parameters").find({"name": "system"})
 **step 6**: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
 **step 7**: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
 **step 8**: restart the docker (detailed in step 3)\
-**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses after pressing the user button
+**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses after pressing the user button (Note that: The `5_manipualtor_remote_control.py` and the dependent bbo folder and mios folder should be placed in the real-time PC.)
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
-call_method("localhost", 12000, "home_gripper") # homing the gripper
-move_gripper(0.05) # release the gripper
-grasp(0.01) # grasp the object
+call_method("localhost", 12000, "home_gripper") # code for homing the gripper
+move_gripper(0.05) # code for releasing the gripper
+grasp(0.01) # code for grasping the object
 
-teach_location("localhost","peg_IL_test") # exp name 
-teach_location("localhost","peg_IL_test_app") # approach position
-teach_location("localhost","peg_IL_test_hole") # hole position
-ctrl+z # finish the peg-in-hole poses teaching
+teach_location("localhost","peg_IL_test") # give the exp name 
+teach_location("localhost","peg_IL_test_app") # record approach position
+teach_location("localhost","peg_IL_test_hole") # record hole position
+ctrl+z # finish the peg-in-hole poses teaching process
 ```
-**step 10**: remote implement peg-in-hole experiments after changing the experiments name within the function `repeat_IL_auto()` with the releasing of the user button
+**step 10**: remote implement peg-in-hole experiments after changing the experiments name `peg_name_all` within the function `repeat_IL_auto()` in `5_manipualtor_remote_control.py` with the releasing of the user button
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
-repeat_IL_auto() # insertion 
+repeat_IL_auto() # the manipulator would repeat insertion 3 times with the TacDiffusion_model_512. 
 ```
 
 ## Citation
