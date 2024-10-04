@@ -111,17 +111,23 @@ db.getCollection("parameters").find({"name": "system"})
 **step 6**: update the "robot_ip", "desk_name" and "desk_pwd" based on your own configuration\
 **step 7**: close all the docker containers & boot your robot and lock the joint and release control in the robot desk\
 **step 8**: restart the docker (detailed in step 3)\
-**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses
+**step 9**: homing the gripper, grasp the object and teach the peg-in-hole poses after pressing the user button
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
-call_method("localhost", 12000, "home_gripper") #
-grasp(0.01)
-move_gripper(0.05)
-teach_location("localhost","peg_IL_test_app")
-teach_location("localhost","peg_IL_test_hole")
+call_method("localhost", 12000, "home_gripper") # homing the gripper
+move_gripper(0.05) # release the gripper
+grasp(0.01) # grasp the object
 
+teach_location("localhost","peg_IL_test") # exp name 
+teach_location("localhost","peg_IL_test_app") # approach position
+teach_location("localhost","peg_IL_test_hole") # hole position
+ctrl+z # finish the peg-in-hole poses teaching
 ```
-
+**step 10**: remote implement peg-in-hole experiments after changing the experiments name within the function `repeat_IL_auto()` with the releasing of the user button
+```bash
+ipython3 -i 5_manipualtor_remote_control.py
+repeat_IL_auto() # insertion 
+```
 
 ## Citation
 Please cite the following if you use this repository in your publications:
