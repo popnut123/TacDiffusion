@@ -129,6 +129,10 @@ ipython3 -i 5_manipualtor_remote_control.py
 repeat_IL_auto() # the manipulator would repeat insertion 3 times with the TacDiffusion_model_512. 
 ```
 
+### Additional note about getting realtime kernel and cuda working on a single PC
+
+It is possible to resolve the compatability issue of realtime kernel and nvidia driver. Simply following the guide [here](https://gist.github.com/FrankieWOO/8f5d0794512ae43a4efd7e068b19a4d8) if you have to deploy everything on a single GPU PC.
+
 ## Citation
 Please cite the following if you use this repository in your publications:
 
