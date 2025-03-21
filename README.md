@@ -123,10 +123,10 @@ teach_location("localhost","peg_IL_test_app") # record approach position
 teach_location("localhost","peg_IL_test_hole") # record hole position
 ctrl+z # finish the peg-in-hole poses teaching process
 ```
-**step 10**: remote implement peg-in-hole experiments after changing the experiments name `peg_name_all` within the function `repeat_IL_auto()` in `5_manipualtor_remote_control.py` with the releasing of the user button
+**step 10**: remote implement peg-in-hole experiments after changing the experiments name `peg_name_all` within the function `insert_auto_IL()` in `5_manipualtor_remote_control.py` with the releasing of the user button
 ```bash
 ipython3 -i 5_manipualtor_remote_control.py
-repeat_IL_auto() # the manipulator would repeat insertion 3 times with the TacDiffusion_model_512. 
+insert_auto_IL() # the manipulator would repeat insertion 3 times with the TacDiffusion_model_512. 
 ```
 
 ### Additional note about getting realtime kernel and cuda working on a single PC
