@@ -430,7 +430,6 @@ class Model_Cond_Diffusion(nn.Module):
                 y_i = y_i.repeat(2, 1)
                 t_is = t_is.repeat(2, 1)
 
-            # I'm a bit confused why we are adding noise during denoising?
             z = torch.randn(y_shape).to(self.device) if i > 1 else 0
 
             # split predictions and compute weighting
