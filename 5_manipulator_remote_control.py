@@ -65,8 +65,8 @@ def il_insertion_test(peg_name, recorded_file_name):
             "il" : {
                 "port_src": 2333,
                 "f_push": 8, 
-                "if_ds": True # True: apply Filter; 
-                              # False: no Filter
+                "if_ds": True, # True: apply Filter;  # False: no Filter
+                "model_ip": "10.157.175.109" # ip of the GPU PC
             }
             
         },
